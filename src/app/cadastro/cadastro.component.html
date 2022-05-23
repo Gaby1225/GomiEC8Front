@@ -1,0 +1,95 @@
+<div class="cadastro-div">
+  <div class="line-div-50">
+    <mat-form-field appearance="outline" color="accent">
+      <mat-label>Email</mat-label>
+      <input matInput required [(ngModel)]="usuario.email" type="email">
+    </mat-form-field>
+    <mat-form-field appearance="outline" color="accent">
+      <mat-label>Senha</mat-label>
+      <input matInput required [(ngModel)]="usuario.senha" type="password">
+    </mat-form-field>
+  </div>
+  <div class="line-div-50">
+    <mat-form-field appearance="outline" color="accent">
+      <mat-label>Nome</mat-label>
+      <input matInput required [(ngModel)]="usuario.nome" type="text">
+    </mat-form-field>
+    <mat-form-field appearance="outline" color="accent">
+      <mat-label>CPF</mat-label>
+      <input matInput required [(ngModel)]="usuario.cpf" type="text">
+    </mat-form-field>
+  </div>
+  <div class="line-div-50">
+    <mat-form-field appearance="outline" color="accent">
+      <mat-label>Data de Nascimento:</mat-label>
+      <input matInput required [(ngModel)]="usuario.nascimento" type="date">
+    </mat-form-field>
+    <mat-form-field appearance="outline" color="accent">
+      <mat-label>Telefone</mat-label>
+      <input matInput required [(ngModel)]="usuario.telefone" type="tel">
+    </mat-form-field>
+  </div>
+  <div class="selectors">
+    <mat-radio-group class="selectors" [(ngModel)]="seletorUsuario">
+      <mat-radio-button value="0" color="accent">Cliente</mat-radio-button>
+      <mat-radio-button value="1" color="accent">Funcionario</mat-radio-button>
+    </mat-radio-group>
+  </div>
+  <div *ngIf="clienteSelecionado()">
+    <div class="line-div-33">
+      <mat-form-field required="clienteSelecionado()" appearance="outline" color="accent">
+        <mat-label>Rua</mat-label>
+        <input matInput required [(ngModel)]="cliente.rua" type="text">
+      </mat-form-field>
+      <mat-form-field appearance="outline" color="accent">
+        <mat-label>Numero</mat-label>
+        <input matInput required [(ngModel)]="cliente.numero" type="number">
+      </mat-form-field>
+      <mat-form-field appearance="outline" color="accent">
+        <mat-label>Complemento</mat-label>
+        <input matInput [(ngModel)]="cliente.complemento" type="text">
+      </mat-form-field>
+    </div>
+    <div class="line-div-33">
+      <mat-form-field appearance="outline" color="accent">
+        <mat-label>Bairro</mat-label>
+        <input matInput required [(ngModel)]="cliente.bairro" type="text">
+      </mat-form-field>
+      <mat-form-field appearance="outline" color="accent">
+        <mat-label>Cidade</mat-label>
+        <input matInput required [(ngModel)]="cliente.cidade" type="text">
+      </mat-form-field>
+      <mat-form-field appearance="outline" color="accent">
+        <mat-label>CEP</mat-label>
+        <input matInput required [(ngModel)]="cliente.cep" type="text">
+      </mat-form-field>
+    </div>
+  </div>
+  <div *ngIf="motoristaSelecionado()">
+    <div class="line-div-50">
+      <mat-form-field appearance="outline" color="accent">
+        <mat-label>Tipo de veiculo</mat-label>
+        <input matInput required [(ngModel)]="motorista.tipoVeiculo" type="text">
+      </mat-form-field>
+      <mat-form-field appearance="outline" color="accent">
+        <mat-label>Carga Suportada</mat-label>
+        <input matInput required [(ngModel)]="motorista.carga" type="text">
+      </mat-form-field>
+    </div>
+    <div class="line-div-33">
+      <mat-form-field appearance="outline" color="accent">
+        <mat-label>CNH</mat-label>
+        <input matInput required [(ngModel)]="motorista.cnh" type="number">
+      </mat-form-field>
+      <mat-form-field appearance="outline" color="accent">
+        <mat-label>Categoria da CNH</mat-label>
+        <input matInput required [(ngModel)]="motorista.categoria" type="text" maxlength="1">
+      </mat-form-field>
+      <mat-form-field appearance="outline" color="accent">
+        <mat-label>Data da expiração</mat-label>
+        <input matInput required [(ngModel)]="motorista.expiracao" type="date">
+      </mat-form-field>
+    </div>
+  </div>
+  <button mat-raised-button color="accent" (click)="cadastrar()" *ngIf="seletorSelecionado()">Cadastrar</button>
+</div>

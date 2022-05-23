@@ -1,0 +1,38 @@
+name: $(Year:yyyy).$(Month).$(DayOfMonth)$(Rev:.r)
+
+trigger: none
+
+stages:
+- stage: Build
+  jobs:
+  - job: Build
+    pool:
+     vmImage: ubuntu-latest
+
+- stage: HML
+  jobs:
+  - job: DeployHML
+    pool:
+     vmImage: ubuntu-latest
+
+    steps:          
+    - task: AzureStaticWebApp@0
+      inputs:
+       app_location: '/'
+       output_location: '/dist/gomi-v3-angular'
+       azure_static_web_apps_api_token: '4411a60ae776deccfe161349de09e7d7b1928f6b9257fc4e8436bbb2970781a11-5cae1f3a-17bd-44f0-9ba5-128f5f25d06501090405'
+
+
+#Verificar para ir pra prd só quando clicar para ir
+- stage: PRD
+  jobs:
+  - job: DeployPRD
+    pool:
+     vmImage: ubuntu-latest
+
+    steps:          
+    - task: AzureStaticWebApp@0
+      inputs:
+       app_location: '/'
+       output_location: '/dist/gomi-v3-angular'
+       azure_static_web_apps_api_token: '3df017625330c9ab0e3d5a78ac8f875cc2afd330ad43072302cd9331be0454be1-c1aa2a82-a258-492d-a367-bf8db22bb51a01086011'

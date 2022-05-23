@@ -1,0 +1,49 @@
+<app-header></app-header>
+
+<!-- Provisorio -->
+<p>{{tipoUsuario}} {{usuarioNome}} está logado</p>
+<button (click)="cadastrarCliente()">Cadastrar Cliente</button>
+<button (click)="logarUsuario()">Logar Cliente</button>
+<button (click)="alterarCliente()">Alterar Cliente</button>
+<button (click)="excluirCliente()">Excluir Cliente</button>
+<button (click)="consultarCliente()">Consultar Cliente</button>
+<br>
+<br>
+<button (click)="cadastrarMotorista()">Cadastrar Motorista</button>
+<button (click)="logarMotorista()">Logar Motorista</button>
+<button (click)="alterarMotorista()">Alterar Motorista</button>
+<button (click)="excluirMotorista()">Excluir Motorista</button>
+<button (click)="consultarMotorista()">Consultar Motorista</button>
+<br>
+<br>
+<input type="text" #coleta>
+<button (click)="criarColeta()">Criar Coleta</button>
+<button (click)="listarColetasDisponiveis()">Listar Coletas Disponíveis</button>
+<button (click)="aceitarColeta(coleta.value)">Aceitar Coleta</button>
+<button (click)="confirmarColeta(coleta.value)">Confirmar Coleta</button>
+<button (click)="consultarColeta(coleta.value)">Consultar Coleta</button>
+<br>
+<button (click)="listarColetasMotorista()">Listar Coletas do Motorista</button>
+<button (click)="listarColetasCliente()">Listar Coletas do Cliente</button>
+<button (click)="alterarColeta(coleta.value)">Alterar Coleta</button>
+<button (click)="removerColeta(coleta.value)">Remover Coleta</button>
+
+<!--
+<router-outlet></router-outlet>
+-->
+
+<!--
+<div class="page">
+  <h3>Gomi</h3>
+  <div class="container" id="app">
+    <br/>
+    <div class="alert alert-warning alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <strong><a href="http://codingthesmartway.com/courses/angular2-complete-guide/" target="_blank">[ONLINE COURSE] - Angular - The Complete Guide</a></strong> +++ Master Angular (both Angular 4 and Angular 2) and build awesome, reactive web apps with the successor of Angular.js +++ Develop modern, complex, responsive and scalable web applications with Angular 4  +++ Fully understand the architecture behind an Angular 4 application and how to use it +++
+    </div>
+    <br/>
+    <hr>
+    <div class="footer">
+      <p>&copy; <a href="http://codingthesmartway.com" target="_blank">CodingTheSmartWay.com</a> | <a href="http://codingthesmartway.com/imprint" target="_blank">Imprint</a></p>
+    </div>
+-->

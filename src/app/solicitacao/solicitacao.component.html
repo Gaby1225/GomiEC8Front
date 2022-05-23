@@ -1,0 +1,16 @@
+<div class="cadastro-div">
+  <mat-form-field appearance="outline" color="accent">
+    <mat-label>Nome</mat-label>
+    <input matInput required [(ngModel)]="coleta.nome" type="text">
+  </mat-form-field>
+  <mat-form-field appearance="outline" color="accent">
+    <mat-label>Tipo</mat-label>
+    <input matInput required [(ngModel)]="coleta.tipo" type="text">
+  </mat-form-field>
+  <mat-form-field appearance="outline" color="accent">
+    <mat-label>Peso</mat-label>
+    <input matInput [(ngModel)]="coleta.peso" type="number">
+  </mat-form-field>
+  <button mat-raised-button color="accent" (click)="solicitar()">Solicitar</button>
+  <button mat-raised-button routerLink="/mainpage">Voltar</button>
+</div>

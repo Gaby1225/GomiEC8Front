@@ -1,0 +1,26 @@
+<div class="container-box">
+  <mat-card class="login-card">
+    <mat-card-header>
+      <mat-card-title>Login</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-form-field appearance="outline" color="accent">
+        <mat-label>E-mail</mat-label>
+        <input #emailField matInput type="email">
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="outline" color="accent">
+        <mat-label>Senha</mat-label>
+        <input #passwordField matInput type="password">
+      </mat-form-field>
+      <br>
+      <mat-checkbox color="accent" [(ngModel)]="rememberLogin">Manter-me logado</mat-checkbox>
+      <br>
+      <br>
+      <button mat-raised-button color="accent" (click)="logar(emailField.value, passwordField.value)">Login</button>
+      <br>
+      <br>
+      Clique para criar sua conta <a routerLink="/cadastro">Criar Conta</a>.
+    </mat-card-content>
+  </mat-card>
+</div>

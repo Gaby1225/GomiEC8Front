@@ -1,0 +1,25 @@
+.cadastro-div {
+  margin: 16px;
+}
+
+.line-div-50 mat-form-field {
+  width: 48%;
+  margin: 0 1%;
+}
+
+.line-div-33 mat-form-field {
+  width: 31%;
+  margin: 0 1%;
+}
+
+.selectors mat-radio-button {
+  margin: 16px 1%;
+}
+
+button {
+  margin: 0 1%;
+}
+
+mat-form-field {
+  width: 100%;
+}

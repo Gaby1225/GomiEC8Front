@@ -1,0 +1,12 @@
+.userpage-card{
+  display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+  margin: auto;
+  margin-top: 15%;
+}
+
+mat-form-field {
+  width: 100%;
+}

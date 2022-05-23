@@ -1,0 +1,33 @@
+<div class="mainpage" *ngIf="isUsuarioCliente()">
+  <mat-label>Bem vindo!</mat-label>
+  <br>
+  <button mat-raised-button color="accent" routerLink="/solicitacao">Coleta</button>
+  <br>
+  <mat-nav-list>
+    <mat-list-item *ngFor="let coleta of coletas">
+      <a matLine [routerLink]="['/informacoespedido', coleta.id]">{{coleta.nome}} - {{coleta.tipo}} - {{coleta.peso}} -
+        {{getStatus(coleta)}}</a>
+      <mat-icon>info</mat-icon>
+    </mat-list-item>
+  </mat-nav-list>
+</div>
+<div *ngIf="isUsuarioMotorista()">
+  <mat-label>Bem vindo!</mat-label>
+  <br>
+  <mat-label>Coletas Disponíveis</mat-label>
+  <mat-nav-list>
+    <mat-list-item *ngFor="let coleta of coletas">
+      <a matLine [routerLink]="['/informacoespedido', coleta.id]">{{coleta.nome}} - {{coleta.tipo}} - {{coleta.peso}} -
+        {{getStatus(coleta)}}</a>
+      <mat-icon>info</mat-icon>
+    </mat-list-item>
+  </mat-nav-list>
+  <mat-label>Coletas Aceitas e Concluídas</mat-label>
+  <mat-nav-list>
+    <mat-list-item *ngFor="let coleta of coletasAceitas">
+      <a matLine [routerLink]="['/informacoespedido', coleta.id]">{{coleta.nome}} - {{coleta.tipo}} - {{coleta.peso}} -
+        {{getStatus(coleta)}}</a>
+      <mat-icon>info</mat-icon>
+    </mat-list-item>
+  </mat-nav-list>
+</div>
